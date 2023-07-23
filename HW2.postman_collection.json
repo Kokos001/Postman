@@ -18,7 +18,8 @@
 							"});\r",
 							"pm.test(\"Body matches string\", function () {\r",
 							"    typeof pm.response.text() == \"string\";\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -315,7 +316,7 @@
 							"\r",
 							"console.log(Res_body.salary.sort());\r",
 							"for (let i=0; i < Res_body.salary.length; i++) {\r",
-							"    console.log(Res_body.salary[i])\r",
+							"    console.log(+Res_body.salary[i])\r",
 							"};"
 						],
 						"type": "text/javascript"
@@ -451,6 +452,13 @@
 							"pm.test(\"Check salary 5_years req-res\", function () {\r",
 							"        pm.expect(Res_body.person[\"u_salary_5_years\"]).to.eql(+Req_body.salary*4.2);\r",
 							"});\r",
+							"\r",
+							"pm.test(\"u_name\", function () {\r",
+							"        let p = Res_body.person[\"u_name\"];\r",
+							"        for (let i = 0; i < p.length; i++) {\r",
+							"    console.log(p[i])}\r",
+							"});\r",
+							"\r",
 							""
 						],
 						"type": "text/javascript"
