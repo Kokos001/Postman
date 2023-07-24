@@ -454,9 +454,8 @@
 							"});\r",
 							"\r",
 							"pm.test(\"u_name\", function () {\r",
-							"        let p = Res_body.person[\"u_name\"];\r",
-							"        for (let i = 0; i < p.length; i++) {\r",
-							"    console.log(p[i])}\r",
+							"        for (let i in Res_body.person) {\r",
+							"    console.log(i + ':', Res_body.person[i])}\r",
 							"});\r",
 							"\r",
 							""
